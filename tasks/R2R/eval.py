@@ -45,7 +45,7 @@ class Evaluation(object):
         return near_id
 
     def _score_item(self, instr_id, path):
-        ''' Calculate error based on the final position in trajectory, and also 
+        ''' Calculate error based on the final position in trajectory, and also
             the closest position (oracle stopping rule). '''
         gt = self.gt[int(instr_id.split('_')[0])]
         start = gt['path'][0]
@@ -66,7 +66,7 @@ class Evaluation(object):
     def score(self, output_file):
         ''' Evaluate each agent trajectory based on how close it got to the goal location '''
         self.scores = defaultdict(list)
-        instr_ids = set(self.instr_ids) 
+        instr_ids = set(self.instr_ids)
         with open(output_file) as f:
             for item in json.load(f):
                 # Check against expected ids
@@ -125,9 +125,3 @@ if __name__ == '__main__':
 
     eval_simple_agents()
     #eval_seq2seq()
-
-
-
-
-
-

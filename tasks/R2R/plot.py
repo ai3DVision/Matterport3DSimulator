@@ -42,7 +42,7 @@ def plot_training_curves():
       'Teacher-forcing Val Unseen': 'C3',
       'Teacher-forcing Train': 'C5'
     }
-    
+
     fig, axes = plt.subplots(ncols=3, squeeze=True, figsize=(13,3.25))
     handles = []
     labels = []
@@ -70,12 +70,12 @@ def plot_training_curves():
     plt.tight_layout()
     fig.subplots_adjust(bottom=0.4)
     handles, labels = axes[0].get_legend_handles_labels()
-    axes[1].legend(handles = handles, labels=labels, loc='upper center', 
+    axes[1].legend(handles = handles, labels=labels, loc='upper center',
              bbox_to_anchor=(0.5, -0.35), fancybox=False, shadow=False, ncol=3)
     plt.setp(axes[1].get_legend().get_texts(), fontsize='12')
     plt.savefig('%s/training.png' % (PLOT_DIR))
 
-        
+
 def plot_final_scores():
     ''' Plot the scores '''
     font = {
@@ -120,10 +120,3 @@ def plot_final_scores():
 if __name__ == '__main__':
     plot_training_curves()
     plot_final_scores()
-
-
-
-
-
-
-
